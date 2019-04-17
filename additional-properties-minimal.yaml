@@ -1,0 +1,27 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Test
+host: api.example.com
+schemes:
+  - https
+produces:
+  - application/json
+consumes:
+  - application/json
+
+paths:
+  /test:
+    get:
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ResponseBody'
+ 
+definitions:
+  ResponseBody:
+    type: object
+    additionalProperties:
+      description: |
+        This property can have any type.
