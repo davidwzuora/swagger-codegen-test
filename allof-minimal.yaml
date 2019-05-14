@@ -1,0 +1,35 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Test
+host: api.example.com
+schemes:
+  - https
+produces:
+  - application/json
+consumes:
+  - application/json
+
+paths:
+  /test:
+    get:
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ResponseBody'
+ 
+definitions:
+  ResponseBody:
+    allOf:
+      - type: object
+        properties:
+          propX1:
+            type: string
+      - $ref: "#/definitions/ModelA"
+
+  ModelA:
+    type: object
+    properties:
+      propA1:
+        type: string
