@@ -23,13 +23,17 @@ definitions:
   ResponseBody:
     allOf:
       - type: object
-        properties:
-          propX1:
-            type: string
+      - $ref: "#/definitions/ResponseBodyModel1"
       - $ref: "#/definitions/ModelA"
 
   ModelA:
     type: object
     properties:
       propA1:
+        type: string
+
+  ResponseBodyModel1:
+    type: object
+    properties:
+      propX1:
         type: string
